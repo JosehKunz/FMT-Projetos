@@ -1,39 +1,39 @@
-const express = require('express') //Framework da aplicação
-const cors = require('cors') // Biblioteca utilizada para inserir headers http
-const { connection } = require('./database/connection') // Configuração de acesso ao banco de dados
+const express = require('express') 
+const cors = require('cors') // Biblioteca para headers http
+const { connection } = require('./database/connection') // Acesso ao banco de dados
 const routes = require('./routes/routes')
 
 const PORT_API = process.env.PORT_API 
 
 class Server {
-  constructor (server = express())// Argumento do constructor auto iniciado da aplicação para usarmos as devidas funções do express
+  constructor (server = express())//  Funções do express
   { 
-    this.middlewares(server) // Instância do argumento da função para a função middlewares
-    this.database()  // Instância da função database
+    this.middlewares(server) // Função middlewares
+    this.database()  // Função database
     server.use(routes)
-    this.initializeServer(server) // Instância da função initializeServer
+    this.initializeServer(server) // InitializeServer
 
   }
 
   async middlewares(app) {
-    app.use(cors()) // Utilização da função cors dentro do servidor
-    app.use(express.json()) // Habilitar entrada de dados como json no servidor
+    app.use(cors()) // Cors dentro do servidor
+    app.use(express.json()) // Json no servidor
   }
 
   async database() {
     try {
-      await connection.authenticate(); // Tentativa de conexão com o banco de dados
-      console.log('Conexão bem sucedida!');
+      await connection.authenticate(); // Conexão com BD
+      console.log('Conexão foi bem sucedida!');
     } catch (error) {
-      console.error('Não foi possível conectar no banco de dados.', error);
+      console.error('Não conectamos com o banco de dados.', error);
       throw error
     }
   }
 
   async initializeServer(app) {
     // Valor da porta do servidor
-    app.listen(PORT_API, () => console.log(`Servidor executando na porta ${PORT_API}`)) // Execução do servidor
+    app.listen(PORT_API, () => console.log(`Servidor executando, porta: ${PORT_API}`)) 
   }
 }
 
-module.exports = { Server } // Exportação da Classe Server
+module.exports = { Server } 

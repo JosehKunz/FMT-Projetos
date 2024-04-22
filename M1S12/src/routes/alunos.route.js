@@ -17,7 +17,7 @@ alunoRoutes.post('/', async (req, res) => {
         const data_nascimento = req.body.data_nascimento
   
         if (!nome) {
-            return res.status(400).json({ messagem: 'O nome é obrigatório' })
+            return res.status(400).json({ messagem: 'O nome é um campo obrigatório' })
         }
 
         if (!data_nascimento) {
@@ -25,7 +25,7 @@ alunoRoutes.post('/', async (req, res) => {
         }
 
         if(!data_nascimento.match(/\d{4}-\d{2}-\d{2}/gm)) {
-            return res.status(400).json({ messagem: 'A data de nascimento não está no formato correto' }) 
+            return res.status(400).json({ messagem: 'Coloque a data no formato ANO-MÊS-DIA' }) 
         }
 
         const aluno = await Aluno.create({
@@ -39,7 +39,7 @@ alunoRoutes.post('/', async (req, res) => {
 
     } catch (error) {
         console.log(error.message)
-        res.status(500).json({ error: 'Não possível cadastrar o aluno' })
+        res.status(500).json({ error: 'Não foi possível cadastrar o aluno' })
     }
 })
 
