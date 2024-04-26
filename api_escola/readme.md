@@ -1,4 +1,4 @@
-# Semana 10 - Introdução ao Sequelize
+# PROJETO API_ESCOLA
 
 ## Rodar o repositório:
 
