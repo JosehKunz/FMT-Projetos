@@ -61,14 +61,11 @@ async listar (req, res) {
 
 async deletar (req, res) {
     const { id } = req.params
-
-    Curso.destroy({
-        where: {
-            id: id
-        }
-    }) 
-
-    res.status(204).json({})
+        await Curso.destroy({
+            where: {
+                id: id
+            }
+        });
 }
 
 async atualizar (req, res)  {
