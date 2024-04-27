@@ -65,7 +65,9 @@ async deletar (req, res) {
             where: {
                 id: id
             }
-        });
+        })
+        res.status(200).json({ message: `Curso ID ${id} deletado` })
+        ;
 }
 
 async atualizar (req, res)  {
