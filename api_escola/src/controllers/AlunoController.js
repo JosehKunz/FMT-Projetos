@@ -35,8 +35,7 @@ class AlunoController {
                 email: email,
                 password: password,
                 nome: nome,
-                data_nascimento: data_nascimento,
-                celular: celular
+                data_nascimento: data_nascimento
             })
 
             res.status(201).json(aluno)

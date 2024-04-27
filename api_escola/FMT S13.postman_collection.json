@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "ba1f326f-84c3-48f1-a50d-e5c613153228",
+		"name": "FMT S13",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33911785"
+	},
+	"item": [
+		{
+			"name": "Ver Alunos com token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTQxNzM1Mjh9.M2aZn_fO3qtLd1gJkt9TGutsK-zNlQ_f9vNgi4kqLUM",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/alunos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"alunos"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM1NjkwMzV9.RuZUYaXJ_eCUrw5SF9zIq32tMiYNilAjtfWxtptFHis",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Postar Aluno",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "       {\r\n        email = \"josekunz@gmail.com\",\r\n        password = \"ZEBRA\",\r\n        nome = \"José Kunz\",\r\n        data_nascimento = \"2024-05-12\",\r\n        celular = \"5199129525\",\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/alunos"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duracao_horas\": 15\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/cursos/7"
+			},
+			"response": []
+		},
+		{
+			"name": "Ver Cursos com token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM1NjkwMzV9.RuZUYaXJ_eCUrw5SF9zIq32tMiYNilAjtfWxtptFHis",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/cursos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"cursos"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM1NjkwMzV9.RuZUYaXJ_eCUrw5SF9zIq32tMiYNilAjtfWxtptFHis",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pegar Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\r\n        \"email\" : \"josekunz@gmail.com\",\r\n        \"password\" : \"ZEBRA\" \r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/login"
+			},
+			"response": []
+		},
+		{
+			"name": "Postar Curso",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTQxNzM1Mjh9.M2aZn_fO3qtLd1gJkt9TGutsK-zNlQ_f9vNgi4kqLUM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Ciêncis\",\r\n    \"duracao_horas\": 150\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/cursos"
+			},
+			"response": []
+		},
+		{
+			"name": "Postar Matrícula",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM5OTg0MjZ9.mOFWcoNwYSo87NgiP_nZfY1LpWBzaFqfiL0JzXi46Lk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"aluno_id\": \"1\",\r\n    \"curso_id\": \"3\"\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/matriculas?Authorization=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM5OTg0MjZ9.mOFWcoNwYSo87NgiP_nZfY1LpWBzaFqfiL0JzXi46Lk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"matriculas"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjEsImVtYWlsIjoiam9zZWt1bnpAZ21haWwuY29tIiwibm9tZSI6Ikpvc8OpIEt1bnoiLCJpYXQiOjE3MTM5OTg0MjZ9.mOFWcoNwYSo87NgiP_nZfY1LpWBzaFqfiL0JzXi46Lk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
